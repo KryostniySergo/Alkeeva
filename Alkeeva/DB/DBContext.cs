@@ -17,7 +17,7 @@ public class ApplicationContext : DbContext
         optionsBuilder.UseNpgsql("" +
             "Host=localhost;" +
             "Port=5432;" +
-            "Database=postgres;" +
+            "Database=alkeeva;" +
             "Username=postgres;" +
             "Password=12345");
     }
@@ -29,12 +29,12 @@ public class ApplicationContext : DbContext
         var fbto = new Faculty { Id = 2, Name = "ФБТО" };
         var cmka = new Faculty { Id = 3, Name = "ЦМК" };
 
-        var ivt = new Speciality { Id = 1, Name = "ИВТ", MinPoint = 100, NessasaryItem = Items.Physics, FacultyId = fist.Id };
-        var ist = new Speciality { Id = 2, Name = "ИСТ", MinPoint = 100, NessasaryItem = Items.Physics, FacultyId = fist.Id };
-        var ib = new Speciality { Id = 3, Name = "ИБ", MinPoint = 200, NessasaryItem = Items.Informatics, FacultyId = fbto.Id };
-        var yits = new Speciality { Id = 4, Name = "УИТС", MinPoint = 150, NessasaryItem = Items.Informatics, FacultyId = fbto.Id };
-        var bizinf = new Speciality { Id = 5, Name = "БИ", MinPoint = 120, NessasaryItem = Items.Social, FacultyId = cmka.Id };
-        var recl = new Speciality { Id = 6, Name = "РСО", MinPoint = 100, NessasaryItem = Items.Social, FacultyId = cmka.Id };
+        var ivt = new Speciality { Id = 1, Name = "ИВТ", NessasaryItem = Items.Physics, BudgetPlaces=10, FacultyId = fist.Id };
+        var ist = new Speciality { Id = 2, Name = "ИСТ", NessasaryItem = Items.Physics, BudgetPlaces = 8, FacultyId = fist.Id };
+        var ib = new Speciality { Id = 3, Name = "ИБ", NessasaryItem = Items.Informatics, BudgetPlaces = 5, FacultyId = fbto.Id };
+        var yits = new Speciality { Id = 4, Name = "УИТС", NessasaryItem = Items.Informatics, BudgetPlaces = 7, FacultyId = fbto.Id };
+        var bizinf = new Speciality { Id = 5, Name = "БИ", NessasaryItem = Items.Social, BudgetPlaces = 3, FacultyId = cmka.Id };
+        var recl = new Speciality { Id = 6, Name = "РСО", NessasaryItem = Items.Social, BudgetPlaces = 6, FacultyId = cmka.Id };
 
         int offset = 0;
         Random rand = new Random();

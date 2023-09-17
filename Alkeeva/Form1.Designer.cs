@@ -33,6 +33,8 @@
             label1 = new Label();
             label2 = new Label();
             comboBox1 = new ComboBox();
+            button2 = new Button();
+            comboBox2 = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -81,11 +83,31 @@
             comboBox1.Size = new Size(121, 23);
             comboBox1.TabIndex = 4;
             // 
+            // button2
+            // 
+            button2.Location = new Point(83, 357);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 23);
+            button2.TabIndex = 5;
+            button2.Text = "button2";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(61, 303);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(121, 23);
+            comboBox2.TabIndex = 6;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(comboBox2);
+            Controls.Add(button2);
             Controls.Add(comboBox1);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -105,5 +127,7 @@
         private Label label1;
         private Label label2;
         private ComboBox comboBox1;
+        private Button button2;
+        private ComboBox comboBox2;
     }
 }
