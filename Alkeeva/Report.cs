@@ -26,9 +26,9 @@ namespace Alkeeva
             using (ApplicationContext db = new ApplicationContext())
             {
                 dataGridView1.Rows.Clear();
+                var speciality = db.Specialities.FirstOrDefault(s => s.Id == comboBox1.SelectedIndex + 1);
                 var abiturs = db.Abiturients
                     .Where(s => s.SpecialityId == comboBox1.SelectedIndex + 1)
-                    .Include(s => s.Speciality)
                     .OrderByDescending(s => (s.Russian + s.Math + s.Physics + s.Informatics + s.Social))
                     .ToList();
                 dataGridView1.ColumnCount = 6;
@@ -36,8 +36,8 @@ namespace Alkeeva
                 dataGridView1.Columns[1].Name = "ФИО";
                 dataGridView1.Columns[2].Name = "Русский";
                 dataGridView1.Columns[3].Name = "Математика";
-                if (abiturs[0].Speciality.NessasaryItem != Items.Social)
-                    dataGridView1.Columns[4].Name = abiturs[0].Speciality.NessasaryItem == Items.Informatics ? "Информатика" : "Физика";
+                if (speciality.NessasaryItem != Items.Social)
+                    dataGridView1.Columns[4].Name = speciality.NessasaryItem == Items.Informatics ? "Информатика" : "Физика";
                 else
                     dataGridView1.Columns[4].Name = "Обществознание";
                 dataGridView1.Columns[5].Name = "Всего баллов";
@@ -45,7 +45,7 @@ namespace Alkeeva
                 for (int i = 0; i < abiturs.Count; i++)
                 {
                     var item = abiturs[i];
-                    if (abiturs[0].Speciality.NessasaryItem != Items.Social)
+                    if (speciality.NessasaryItem != Items.Social)
                     {
                         dataGridView1.Rows.Add(
                             item.Id,
@@ -68,7 +68,7 @@ namespace Alkeeva
                             );
                     }
 
-                    if (i >= abiturs[i].Speciality.BudgetPlaces)
+                    if (i >= speciality.BudgetPlaces)
                         dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Pink;
                     else
                         dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Green;
