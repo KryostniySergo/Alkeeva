@@ -29,89 +29,89 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
-            button1 = new Button();
-            label1 = new Label();
-            label2 = new Label();
-            comboBox1 = new ComboBox();
-            button2 = new Button();
-            comboBox2 = new ComboBox();
+            SpecialityBox = new ComboBox();
+            FacultyBox = new ComboBox();
+            SpecialityLabel = new Label();
+            FacultyLabel = new Label();
+            ShowSpeciality = new Button();
+            ShowFaculty = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 12);
+            dataGridView1.Location = new Point(139, 12);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(776, 223);
+            dataGridView1.Size = new Size(649, 426);
             dataGridView1.TabIndex = 0;
             // 
-            // button1
+            // SpecialityBox
             // 
-            button1.Location = new Point(601, 370);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 1;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            SpecialityBox.FormattingEnabled = true;
+            SpecialityBox.Location = new Point(12, 44);
+            SpecialityBox.Name = "SpecialityBox";
+            SpecialityBox.Size = new Size(121, 23);
+            SpecialityBox.TabIndex = 1;
             // 
-            // label1
+            // FacultyBox
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(83, 285);
-            label1.Name = "label1";
-            label1.Size = new Size(72, 15);
-            label1.TabIndex = 2;
-            label1.Text = "Факультеты";
+            FacultyBox.FormattingEnabled = true;
+            FacultyBox.Location = new Point(12, 136);
+            FacultyBox.Name = "FacultyBox";
+            FacultyBox.Size = new Size(121, 23);
+            FacultyBox.TabIndex = 2;
             // 
-            // label2
+            // SpecialityLabel
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(601, 295);
-            label2.Name = "label2";
-            label2.Size = new Size(81, 15);
-            label2.TabIndex = 3;
-            label2.Text = "Направления";
+            SpecialityLabel.AutoSize = true;
+            SpecialityLabel.Location = new Point(34, 26);
+            SpecialityLabel.Name = "SpecialityLabel";
+            SpecialityLabel.Size = new Size(81, 15);
+            SpecialityLabel.TabIndex = 3;
+            SpecialityLabel.Text = "Направления";
             // 
-            // comboBox1
+            // FacultyLabel
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(581, 324);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 4;
+            FacultyLabel.AutoSize = true;
+            FacultyLabel.Location = new Point(37, 118);
+            FacultyLabel.Name = "FacultyLabel";
+            FacultyLabel.Size = new Size(72, 15);
+            FacultyLabel.TabIndex = 4;
+            FacultyLabel.Text = "Факультеты";
             // 
-            // button2
+            // ShowSpeciality
             // 
-            button2.Location = new Point(83, 357);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 5;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            ShowSpeciality.Location = new Point(34, 73);
+            ShowSpeciality.Name = "ShowSpeciality";
+            ShowSpeciality.Size = new Size(75, 23);
+            ShowSpeciality.TabIndex = 5;
+            ShowSpeciality.Text = "Показать";
+            ShowSpeciality.UseVisualStyleBackColor = true;
+            ShowSpeciality.Click += ShowSpeciality_Click;
             // 
-            // comboBox2
+            // ShowFaculty
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(61, 303);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(121, 23);
-            comboBox2.TabIndex = 6;
+            ShowFaculty.Location = new Point(34, 165);
+            ShowFaculty.Name = "ShowFaculty";
+            ShowFaculty.Size = new Size(75, 23);
+            ShowFaculty.TabIndex = 6;
+            ShowFaculty.Text = "Показать";
+            ShowFaculty.UseVisualStyleBackColor = true;
+            ShowFaculty.Click += ShowFaculty_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(comboBox2);
-            Controls.Add(button2);
-            Controls.Add(comboBox1);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(button1);
+            Controls.Add(ShowFaculty);
+            Controls.Add(ShowSpeciality);
+            Controls.Add(FacultyLabel);
+            Controls.Add(SpecialityLabel);
+            Controls.Add(FacultyBox);
+            Controls.Add(SpecialityBox);
             Controls.Add(dataGridView1);
             Name = "Form1";
             Text = "Form1";
@@ -123,11 +123,11 @@
         #endregion
 
         private DataGridView dataGridView1;
-        private Button button1;
-        private Label label1;
-        private Label label2;
-        private ComboBox comboBox1;
-        private Button button2;
-        private ComboBox comboBox2;
+        private ComboBox SpecialityBox;
+        private ComboBox FacultyBox;
+        private Label SpecialityLabel;
+        private Label FacultyLabel;
+        private Button ShowSpeciality;
+        private Button ShowFaculty;
     }
 }
